@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height='200dp'
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:background='@color/design_default_color_secondary'
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:src="@drawable/baseline_noise_aware_24"
+        />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Out Of Earshot"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>
