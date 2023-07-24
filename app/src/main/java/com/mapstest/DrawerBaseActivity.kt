@@ -43,13 +43,19 @@ open class DrawerBaseActivity : AppCompatActivity(),
         drawerLayout!!.closeDrawer(GravityCompat.START)
         Log.d("Navigation Registered", item.itemId.toString())
         if (item.itemId == R.id.nav_dashboard) {
-            startActivity(Intent(this, Dashboard::class.java))
+            val i = Intent(this,Dashboard::class.java )
+            i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivity(i)
             overridePendingTransition(0, 0)
         } else if (item.itemId == R.id.nav_map) {
-            startActivity(Intent(this, MapsActivity::class.java))
+            val i = Intent(this, MapsActivity::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivity(i)
             overridePendingTransition(0, 0)
         } else if (item.itemId == R.id.nav_subs) {
-            startActivity(Intent(this, ArtistsubsActivity::class.java))
+            val i = Intent(this, ArtistsubsActivity::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivity(i)
             overridePendingTransition(0, 0)
         }
         return false
