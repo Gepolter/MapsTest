@@ -42,11 +42,13 @@ class LoginDataSource : RetrofitStuff {
             Log.d("e", e.toString())
         }
          //i want js back..
+         var i = 0
          while (
-             result.user.userName == "defaultName"
+             result.user.userName == "defaultName" && i < 7
          ){
              Thread.sleep(1_000)
              Log.d("loginProcess", "waiting for userData")
+             i++
          }
          return result
     }

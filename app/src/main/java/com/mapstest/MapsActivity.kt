@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.media.Image
+import android.os.AsyncTask
 import android.os.Bundle
 import android.provider.Settings.Global
 import android.util.Log
@@ -91,8 +92,8 @@ class MapsActivity : DrawerBaseActivity(), OnMapReadyCallback {
                 .position(center)
                 .title("this is you!")
         )
-
         mMap.moveCamera(CameraUpdateFactory.newLatLng(center))
+
         for (artist in userData.artists){
             //var bmp : Bitmap? = null
             var image: BitmapDescriptor? = null
@@ -115,6 +116,8 @@ class MapsActivity : DrawerBaseActivity(), OnMapReadyCallback {
             }catch (err:Exception){
                 Log.d("MapsError", err.toString())
             }
+
+
 
             var bmp = GlobalScope.async {
                 val loader = ImageLoader(this@MapsActivity)
@@ -165,4 +168,5 @@ class MapsActivity : DrawerBaseActivity(), OnMapReadyCallback {
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(center))
     }
+
 }
