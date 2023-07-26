@@ -82,7 +82,6 @@ class MapsActivity : DrawerBaseActivity(), OnMapReadyCallback {
         ){
             Thread.sleep(1_000)
             Log.d("Maps View Map Ready", "waiting for View Model coroutine")
-
         }
         val userData =  viewModel.uiState.value//intent.extras?.get("userData") as RetrofitStuff.RetrofitHelper.Result
         val center = LatLng(userData.user.locationLatLng[0], userData.user.locationLatLng[1])
@@ -118,7 +117,7 @@ class MapsActivity : DrawerBaseActivity(), OnMapReadyCallback {
             }
 
 
-
+            /*
             var bmp = GlobalScope.async {
                 val loader = ImageLoader(this@MapsActivity)
                 val req = ImageRequest.Builder(this@MapsActivity)
@@ -135,6 +134,7 @@ class MapsActivity : DrawerBaseActivity(), OnMapReadyCallback {
                 return@async (result as BitmapDrawable).bitmap
             }
 
+
             var i = 0
             while (
                 i < 5
@@ -143,7 +143,8 @@ class MapsActivity : DrawerBaseActivity(), OnMapReadyCallback {
                 Log.d("coul test", "waiting for userImageBmp")
                 i++
             }
-            Log.d("coil test", bmp.toString())
+            //Log.d("coil test", bmp.toString())
+            */
             for (gig in artist.gigData){
                 Log.d("Maps View", "skipped loader")
                 var datesString : String = ""
@@ -159,7 +160,7 @@ class MapsActivity : DrawerBaseActivity(), OnMapReadyCallback {
                             gig.venueAddress + "\n" +
                             datesString
                         )
-                        .icon(BitmapDescriptorFactory.fromBitmap(bmp.getCompleted()))
+                        //.icon(BitmapDescriptorFactory.fromBitmap(bmp.getCompleted()))
 
                 )
 
