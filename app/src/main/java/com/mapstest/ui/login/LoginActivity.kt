@@ -130,6 +130,7 @@ class LoginActivity : AppCompatActivity() {
         //display map of user
         val i = Intent(this@LoginActivity, MapsActivity::class.java)
         i.putExtra("userData", result as Serializable)
+        i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(i)
 
         Toast.makeText(

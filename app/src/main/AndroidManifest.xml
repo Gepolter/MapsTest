@@ -33,7 +33,15 @@
         </activity>
         <activity
             android:name="com.mapstest.ArtistsubsActivity"
-            android:exported="true"/>
+            android:exported="true">
+
+        </activity>
+        <activity android:name="com.mapstest.ArtistSearchActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.mapstest.MapsActivity"
             android:exported="true"
